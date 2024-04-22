@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'timer.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.3
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QMenuBar, QPushButton, QSizePolicy, QStatusBar,
     QWidget)
-################################################################################
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -94,45 +94,6 @@ class Ui_MainWindow(object):
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
-        Def_Set = '{0:,}'.format(72000000)
-        self.Clock_ed.setText(Def_Set)
-        self.result_label.setText("0")
-        self.resultSeclabel.setText("0")
-        self.Cal_btn.clicked.connect(self.Cal_btnFnc)
-        self.Clock_ed.textChanged.connect(self.clockTX_Chg_Fnc)
-
-    def clockTX_Chg_Fnc(self):
-        resut_tx = self.Clock_ed.text()
-        try:
-            number = int(resut_tx.replace(',', ''))
-            formatted_str = '{:,}'.format(number)
-            self.Clock_ed.setText(formatted_str)
-        except ValueError:
-            pass
-
-        #resut_tx_ = '{0:,}'.format(int(resut_tx))
-        #print(resut_tx)
-        #print(resut_tx_)
-        #self.Clock_ed.setText(result)
-
-    
-    def Cal_btnFnc(self):
-        InternalClock_text = self.Clock_ed.text()
-        Prescal_text = self.Prescal_ed.text()
-        Period_text = self.Period_ed.text()
-        InternalClock_int = float(InternalClock_text.replace(',', ''))
-        Prescal_int = float(Prescal_text.replace(',', ''))
-        Period_int = float(Period_text.replace(',', ''))
-
-        f_result = (InternalClock_int) / ((Prescal_int + 1) *  (Period_int + 1))
-
-        print(InternalClock_int)
-        print(Prescal_int)
-        print(Period_int)
-        print(f_result)
-
-        self.result_label.setText(str(float(f_result)))
-        self.resultSeclabel.setText(str(float(1/f_result)))
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -151,10 +112,4 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"mSec        :", None))
         self.resultSeclabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
     # retranslateUi
-################################################################################
-app = QApplication([])
-window = QMainWindow()
-ui = Ui_MainWindow()
-ui.setupUi(window)
-window.show()
-app.exec()
+

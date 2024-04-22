@@ -1,0 +1,9 @@
+먼저 python3 를  설치해야 한다. brew 설치는 기본으로 되어있다고 가정함.
+
+
+brew install python3
+pip3 install pyside6
+
+vscode에서 확장 프로그램으로 qt for python을 설치한다.
+
+위와 같이 마우스 오른쪽을 누르면 위와 같은 메뉴가 나타난다.
